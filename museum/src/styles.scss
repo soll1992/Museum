@@ -42,6 +42,9 @@ html {
             opacity: 0.7;
             transition: all 0.3s ease;
         }
+        .navigation-link:active {
+            color: #D2B183;
+        }
         .tickets-item-fix {
             margin-left: 40px;
         }
@@ -484,6 +487,21 @@ h5 {
         .discover-link:hover {
           opacity: 0.7;
           transition: all 0.3s ease;
+        }
+        .play-button:active,
+        .prev-video:active,
+        .next-video:active,
+        .play-video:active,
+        .mute-video:active,
+        .frame-video:active,
+        label:active,
+        .arrow:active,
+        .plus:active,
+        .minus:active,
+        .button-buy:active,
+        .book:active,
+        .discover-link:active {
+            color: #9D8665;
         }
         .video-container {
             margin-top: 55px;
@@ -1479,6 +1497,9 @@ h5 {
         .navigation-link:hover {
             opacity: 0.7;
             transition: all 0.3s ease;
+        }
+        .navigation-link:active {
+            color: #9D8665;
         }
         .socials {
             display: flex;
