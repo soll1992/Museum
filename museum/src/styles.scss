@@ -14,26 +14,10 @@ html {
         align-items: center;
         background-color: inherit;
     }
-    
-    .logo-wrapper {
-        display: flex;
-        .logo {
-            width: 49px;
-            height: 26px;
-            background: url("./assets/svg/logo.svg") no-repeat;
+    @media(min-width:1921px) {
+        .header-container{
+            margin: 0 auto;
         }
-
-        .logo-text {
-            margin-left: 25px;
-            font-family: 'Forum', cursive;
-            font-weight: normal;
-            font-size: 28px;
-            line-height: 31px;        
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #FFFFFF;
-        }
-    
     }
     .header-navigation {
         .navigation-menu {
@@ -54,6 +38,10 @@ html {
             padding:10px;
             color: #FFFFFF;
         }
+        .navigation-link:hover {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
         .tickets-item-fix {
             margin-left: 40px;
         }
@@ -64,11 +52,47 @@ html {
 
 }
 
+.logo-wrapper {
+    display: flex;
+    .logo {
+        width: 49px;
+        height: 26px;
+        background: url("./assets/svg/logo.svg") no-repeat;
+    }
+
+    .logo-text {
+        margin-left: 25px;
+        font-family: 'Forum', cursive;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 31px;        
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    padding: 0;
+    margin: 0;
+}
+.main-footer-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .page-main {
+    flex: 1 0 auto;
     .section {
         width: 100%;
         padding-top: 75px;
         padding-bottom: 75px;
+        user-select: none;
         .section-container {
             max-width: 1440px;
             margin-left: 12.55%;
@@ -100,6 +124,7 @@ html {
         }
 
         .subtitle {
+            margin-top: 24px;
             font-family: "Roboto";
             font-style: normal;
             font-weight: 300;
@@ -244,6 +269,9 @@ html {
                 display: inline-block;
                 position: absolute;
                 cursor: pointer;
+                background-color: inherit;
+                border: none;
+                color: white;
             }
             .arrow.right {
                 transform: rotate(-180deg);
@@ -312,6 +340,10 @@ html {
                 text-decoration: none;
                 color: #000000;
             }
+            .tour-link:hover .tour-title::before {
+                right: 0;
+                transition: 2s;
+            }
             .tour-img {
                 width: 440px;
             }
@@ -360,6 +392,9 @@ html {
         }
         .explore-title {
             margin-bottom: 103px;
+        }
+        .hidden {
+            display: none;
         }
         .explore-text-info {
             margin-top: 0;
@@ -441,7 +476,12 @@ html {
         .mute-video:hover,
         .frame-video:hover,
         label:hover,
-        .arrow:hover {
+        .arrow:hover,
+        .plus:hover,
+        .minus:hover,
+        .button-buy:hover,
+        .book:hover,
+        .discover-link:hover {
           opacity: 0.7;
           transition: all 0.3s ease;
         }
@@ -616,7 +656,7 @@ html {
                 position: relative;
                 margin-top: 75px;
                 height: 1960px;
-                overflow-y: hidden; 
+                overflow: hidden; 
             }
             .picture-container::after {
                 content: "";
@@ -657,8 +697,11 @@ html {
                     width: 720px;
                 }
             }
+            .ticket-type-wrapper {
+                margin-left: 60px;
+            }
             .tickets-bold {
-                font-family: Roboto;
+                font-family: "Roboto";
                 font-style: normal;
                 font-weight: bold;
                 font-size: 28px;
@@ -666,10 +709,714 @@ html {
                 color: #000000;
 
             }
+            .ticket-type-title {
+                margin-top: 0;
+                margin-left: 3px;
+                margin-bottom: 50px;
+            }
             .ticket-radio {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+            .ticket-radio-button {
+                display: flex;
+                margin-bottom: 25px;
+                text-align: center;
+                font-family: "Roboto";
+                font-style: normal;
+                font-weight: 300;
+                font-size: 22px;
+                line-height: 26px;
+                color: #000000;
+            }
+            .ticket-radio+label {
+                cursor: pointer;
+            }
+            .ticket-radio+label::before {
+                content: '';
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                margin-right: 23px;
+                border: 2px solid #000000;
+                border-radius: 50%;
+                flex-shrink: 0;
+                flex-grow: 0;
+                background-color: #FFFFFF;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+            }
+
+            .ticket-radio:checked+label::before {
+                background-image: url(./assets/svg/dot.svg);
+            }
+            .amount {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .amount-title {
+                margin-top: 0;
+                float: right;
+            }
+            .ticket-number-title-position {
+                margin-top: 58px;
+            }
+            .ticket-number-title {
+                margin-bottom: 15px;   
+                margin-left: 25px;
+                font-family: "Roboto";
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 300;
+            }
+            .tickets-number {
+                width: 144px;
+                height: 44px;
+                margin-left: 25px;
+                margin-bottom: 10px;
+                border: 3px solid #000000;
+                display: flex;
+                align-items: center;
+                font-family: "Roboto";
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 26px;
+                color: #000000;
+            }
+            .value {
+                all: unset;
+                width: 3em;
+                text-align: center;
+            }
+            .plus {
+                margin-right: 11px;
+                margin-left: auto;
+                font-size: 32px;
+                font-weight: 400;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .minus {
+                margin-left: 11px;
+                font-size: 32px;
+                font-weight: 400;
+                margin-right: 16px;
+                cursor: pointer;
+            }
+            .total-title {
+                margin-left: 25px;
+                margin-top: 50px;
+                margin-bottom: 62px;
+                letter-spacing: 1.65px;
+            }
+            .anchor {
+                text-decoration: none;
+            }
+            .button-buy {
+                display: flex;
+                width: 175px;
+                height: 50px;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+                justify-content: center;
+                background-color: #000000;
+                font-family: "Roboto";
+                font-size: 22px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 26px;
+                letter-spacing: 2px;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+        /* Tickets form */
+        .tickets-form {
+            padding-top: 91px;
+            padding-bottom: 91px;
+            margin-left: 235px;
+            display: flex;
+            .book-logo {
+                width: 82px;
+                height: 41px;
+                background: url(./assets/svg/logo-gold.svg);
+            }
+            .book-title {
+                width: 400px;
+                font-family: "Forum";
+                font-size: 50px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            .book-subtitle {
+                margin-top: 15px;
+                color: #710707;
+                font-family: "Roboto";
+                font-size: 18px;
+                font-weight: 400;
+            }
+            .underline-title::before {
+                bottom: -45px;
+            }
+            .date-time-wrapper {
+                margin-top: 100px;
+                display: flex;
+                justify-content: space-between;
+            }
+            ::-webkit-calendar-picker-indicator {
+                opacity: 0;
+            }
+            .input-text::placeholder {
+                position: relative;
+                font-family: "Roboto";
+                font-size: 18px;
+                font-weight: 400;
+                color: black;
+            }
+            .textbox {
+                position: relative;
+                padding-left: 45px;
+                width: 140px;
+                height: 40px;
+                border: 1px solid #030303;
+                border-radius: 0;
+                background: transparent;
+            }
+            .date-time-wrapper {
+                margin-top: 70px;
+            }
+            .date-conteiner {
+                position: relative;
+            }
+            .date-conteiner::after {
+                content: "";
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/drop.svg) no-repeat center;
+                z-index: 0;
+            }
+            .date-conteiner::before {
+                content: "";
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/date.svg) no-repeat center;
+                z-index: 0;
+            }
+            .time-conteiner {
+                position: relative;
+            }
+            .time-conteiner::after {
+                content: "";
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/drop.svg) no-repeat center;
+                z-index: 0;
+            }
+            .time-conteiner::before {
+                content: "";
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/time.svg) no-repeat center;
+                z-index: 0;
+            }
+            .custom-input {
+                padding-left: 45px;
+                width: 351px;
+                height: 41px;
+                background: transparent;
+                border: 1px solid #030303;
+            }
+            .name-input-wrapper {
+                position: relative;
+            }
+            .name-input-wrapper::before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 15px;
+                left: 15px;
+                top: 15px;
+                background: url(./assets/svg/name.svg) no-repeat center;
+            }
+            .mail-wrapper {
+                position: relative;
+            }
+            .mail-wrapper::before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 15px;
+                left: 15px;
+                top: 15px;
+                background: url(./assets/svg/email.svg) no-repeat center;
+            }
+            .phone-wrapper {
+                position: relative;
+            }
+            .phone-wrapper::before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 23px;
+                left: 15px;
+                top: 15px;
+                background: url(./assets/svg/tel.svg) no-repeat center;
+            }
+            .ticket-type-wrapper {
+                position: relative;
+                background: transparent;
+            }
+            .ticket-type-wrapper::before {
+                content: "";
+                position: absolute;
+                width: 13px;
+                height: 15px;
+                left: 15px;
+                top: 15px;
+                background: url(./assets/svg/vector.svg) no-repeat center;
+            }
+            .ticket-type-wrapper::after {
+                content: "";
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/drop.svg) no-repeat center;
+                z-index: -1;
+            }
+            .wrapper-margin {
+                margin-top: 20px;
+            }
+            .ticket-type-body {
+                width: 368px;
+                height: 107px;
+                padding: 10px 15px 15px 15px;
+                border: 1px solid #030303;
+                .entry-title {
+                    font-family: "Forum";
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                .underline-title::before {
+                    bottom: -7px;
+                }
+                .basic {
+                    margin-top: 25px;
+                    display: flex;
+                }
+                .senior {
+                    margin-top: 18px;
+                    display: flex;
+                }
+                .form-value {
+                    all: unset;
+                    width: 33px;
+                    height: 23px;
+                    border: 1px solid black;
+                    text-align: right;
+                    margin-left: -4px;
+                    font-family: "Roboto";
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+                .form-plus,
+                .form-minus {
+                    width: 35px;
+                    height: 25px;
+                    border: none;
+                    background-color: black;
+                    font-weight: bold;
+                    font-size: 20px;
+                    color: white;
+                    cursor: pointer;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                }
+                .form-plus {
+                    margin-left: -4px;
+                }
+                span {
+                    font-family: "Roboto";
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                .ticket-counter {
+                    width: 115px;
+                    margin-left: auto;
+                    margin-right: -11px;
+                }
+            }
+            .other-form-wrapper {
+                width: 468px;
+                height: 611px;
+                margin-left: 40px;
+                padding: 25px 30px 25px 30px;
+                border: 1px solid black;
+            }
+            .tickets-info-header {
+                display: flex;
+                img {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+            .tickets-info-title {
+                font-family: "Roboto";
+                font-size: 32px;
+                font-weight: 500;
+            }
+            .tickets-info-subtitle {
+                margin-top: 4px;
+                margin-bottom: 13px;
+                font-size: 22px;
+                color: #740C11;
+            }
+            .date {
+                position: relative;
+            }
+            .date::before {
+                content: "";
+                position: absolute;
+                left: -2px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/date.svg) no-repeat center;
+            }
+            .time {
+                position: relative;
+            }
+            .time::before {
+                content: "";
+                position: absolute;
+                left: -2px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/time.svg) no-repeat center;
+            }
+            .exhibition {
+                position: relative;
+            }
+            .exhibition::before {
+                content: "";
+                position: absolute;
+                left: -2px;
+                width: 17px;
+                height: 17px;
+                background: url(./assets/svg/check.svg) no-repeat center;
+            }
+            .position {
+                padding-left: 30px;
+                margin-bottom: 5px;
+            }
+            .typography {
+                font-family: "Roboto";
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 21px;
+            }
+            .basic-total {
+                display: flex;
+                margin-top: 21px;
+                margin-left: -1px;
+                span {
+                    margin-left: 10px;
+                }
+                .typography {
+                    font-family: "Roboto";
+                    font-size: 22px;
+                    font-weight: 400;
+                }
+            }
+            .number-of-tickets {
+                display: flex;
+                justify-content: center;
+                width: 32px;
+                height: 20px;
+                border-radius: 20%;
+                background-color: black;
+                font-family: "Roboto";
+                font-size: 18px;
+                font-weight: 400;
+                color: #A4A4A3;
+            }
+            .cost {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .senior-total {
+                margin-top: 10px;
+                padding-bottom: 12px;
+                border-bottom: 2px solid #740C11;
+            }
+            .general-total {
+                display: flex;
+                margin-top: 17px;
+                .typography {
+                    font-family: "Roboto";
+                    font-size: 32px;
+                    font-weight: 400;
+                }
+                .general-total-cost {
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+            }
+            .card-frontside {
+                position: relative;
+                width: 320px;
+                height: 181px;
+                margin-top: 19px;
+                padding: 15px 20px 15px 20px;
+                background-color: #BCBCBC;
+                border-radius: 1%; 
+                z-index: 1;            
+            }
+            .card-main {
+                display: flex;
+            }
+            .card-number {
+                margin-bottom: 10px;
+            }
+            .text {
+                margin-bottom: 5px;
+                font-family: "Roboto";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+            }
+            .card-number-input {
+                input {
+                    width: 209px;
+                    height: 30px;
+                }
+            }
+            .card-date {
+                display: flex;
+                width: 215px;
+                margin-bottom: 11px;
+                justify-content: space-between;
+            }
+            .card-month-wrapper {
+                position: relative;
+                width: 100px;
+                z-index: 1;
+            }
+            .card-month {
+                width: 84px;
+                height: 30px;
+                padding-left: 9px;
+                font-family: "Roboto";
+                font-size: 12px;
+                font-weight: 400;
+            }
+            .card-month:focus {
+                outline: none;
+            }
+            .card-month-arrows {
+                position: absolute;
+                width: 28px;
+                height: 34px;
+                bottom: 1px;
+                right: 1px;
+                .arrow {
+                    position: relative;
+                    width: 100%;
+                    height: 50%;
+                    z-index: 3;
+                    border-left: 1px solid #A4A4A3;
+                }
+                .top {
+                    background: url(./assets/svg/arrow-top.svg) no-repeat;
+                    background-position: 55% 90%;
+                    background-color: white;
+                }
+                .bot {
+                    background: url(./assets/svg/arrow-bot.svg) no-repeat;
+                    background-position: 50% 10%;
+                    background-color: white;
+                }
+            }
+            .card-right-part {
+                margin-left: 48px;
+            }
+            .visa {
+                width: 55px;
+                height: 16px;
+                margin-top: 19px;
+                background: url(./assets/svg/visa.svg);
+            }
+            .mastercard {
+                width: 53px;
+                height: 32px;
+                margin-top: 16px;
+                background: url(./assets/svg/mastercard.svg);
+            }
+            .cardholder {
+                width: 313px;
+                height: 30px;
+            }
+            .backside-card {
+                width: 360px;
+                height: 186px;
+                padding-top: 25px;
+                background-color: #939393;
+                border-radius: 1%;
+            }
+            .card-line {
+                width: 100%;
+                height: 45px;
+                background-color: black;
+                margin-bottom: 15px;
+            }
+            .backside-card {
+                position: relative;
+                bottom: 181px;
+                left: 110px;
+                z-index: 0;
+            }
+            .backside-main {
+                margin-left: 265px; 
+                input {
+                    width: 70px;
+                    height: 30px;
+                    margin-bottom: 6px;
+                }
+            }
+            .cvc {
+                margin-left: 10px;
+                margin-bottom: 5px;
+                font-family: "Roboto";
+                font-size: 12px;
+                font-weight: 400;
+            }
+            .cvc-info {
+                width: 55px;
+                margin-left: 10px;
+                font-family: "Roboto";
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+            }
+            .book {
+                width: 220px;
+                height: 45px;
+                position: relative;
+                bottom: 154px;
+                left: 250px;
+                border: none;
+                background-color: #710707;
+                font-family: "Roboto";
+                font-size: 22px;
+                font-weight: 400;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        .contacts-section {
+            display: block;
+        }
+        .contacts {
+            display: flex;
+        }
+        .adress {
+            width: 300px;
+            margin-top: 73px;
+            .typography-bold {
+                margin-bottom: 55px;
+                font-family: "Roboto";
+                font-size: 28px;
+                font-weight: 500;
+                line-height: 33px;
+            }
+            .typography {
+                font-family: "Roboto";
+                font-size: 22px;
+                font-weight: 300;
+                line-height: 26px;
+            }
+            a {
+                text-decoration: none;
                 color: black;
             }
         }
+        .map {
+            margin-top: 103px;
+            margin-left: 182px;
+        }
+        @media(min-width:1921px) {
+            .section-container{
+                margin: 0 auto;
+            }
+        }
+    }
+    /* modal */
+    .modal {
+        position: fixed; /* фиксированное положение */
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,0.5); /* цвет фона */
+        z-index: 1050;
+        opacity: 0; /* по умолчанию модальное окно прозрачно */
+        -webkit-transition: opacity 200ms ease-in; 
+        -moz-transition: opacity 200ms ease-in;
+        transition: opacity 200ms ease-in; /* анимация перехода */
+        pointer-events: none; /* элемент невидим для событий мыши */
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    /* при отображении модального окно */
+    .modal:target {
+        opacity: 1; /* делаем окно видимым */
+	    pointer-events: auto; /* элемент видим для событий мыши */
+        overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+    }
+    /* ширина модального окна и его отступы от экрана */
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
+    .modal-section {
+        background-color: white;
+    }
+    .close {
+        position: absolute;
+        top: 100px;
+        right: 210px;
+        display: block;
+        width: 25px;
+        height: 25px;
+        background: url(./assets/svg/close.svg);
+        cursor: pointer;
+    }
+    .parallax {
+        width: 100%;
+        height: 400px;
+        background: url(assets/img/parallax.jpg) 0 0 / cover no-repeat fixed;
     }
     .section-welcome {
         height: 810px;
@@ -689,5 +1436,89 @@ html {
         background-color: #030303;
     }
 }
-
-
+.page-footer {
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: black;
+    .footer-container {
+        max-width: 1440px;
+        padding-top: 81px;
+        margin-left: 12.55%;
+        display: flex;
+        background-color: inherit;
+    } 
+    @media(min-width:1921px) {
+        .footer-container{
+            margin: 0 auto;
+        }
+    }
+    .top-footer {
+        border-bottom: 3px solid #666666;
+        padding-bottom: 25px;
+        .logo-footer {
+            margin-right: 102px;
+        }
+        ul {
+            margin: 0;
+        }
+        .support-nav {
+            margin-left: 133px;
+        }
+        .navigation-item {
+            margin-bottom: 25px;
+        }
+        .navigation-link {
+            text-decoration: none;
+            font-family: "Roboto";
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 26px;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .navigation-link:hover {
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .socials {
+            display: flex;
+            margin-top: 75px;
+            margin-left: 357px;
+            list-style-type: none;
+            .social-item {
+                margin-right: 25px;
+            }
+            .social-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: 1px solid #666666;
+                filter: drop-shadow(0px 0px 0px #666666);
+            }
+            .social-link:hover {
+                border-color: #9D8665;
+            }
+        }
+    }
+    .bottom-footer {
+        .footer-container {
+            height: 124px;
+            padding: 0;
+            justify-content: space-between;
+            align-items: center; 
+            .typography {
+                font-family: "Roboto";
+                font-size: 22px;
+                font-weight: 200;
+                letter-spacing: 2px;
+                color: #FFFFFF;
+            }
+            .rsschool {
+                margin-left: 31px;
+            }           
+        }
+    }
+}
