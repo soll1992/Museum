@@ -49,10 +49,144 @@ html {
         .contacts-item-fix {
             margin-right: -10px;
         }
+        .c-hamburger {
+            display: none;
+        }
     }
+    @media(max-width: 1024px) {
+        .header-container {
+            max-width: 984px;
+            height: 130px;
+            position: relative;
+        }
+        .header-navigation {
+            .navigation-menu {
+                display: block;
+                width: 122px;
+                position: absolute;
+                padding: 0;
+                left: -1000px;
+                transition: 1s;
+                background-color: black;
+                z-index: 10;
+            }
+            .navigation-menu-active {
+                left: 0;
+                transition: 0.5s;
+            }
+            .contacts-item-fix,
+            .tickets-item-fix,
+            .navigation-item {
+                margin: 0;
+            }
+            .navigation-link {
+                padding: 0;
+            }
+            .navigation-item {
+                margin-top: 25px;
+                position: relative;
+            }
+            .navigation-item::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 7px;
+                height: 12px;
+                background: url(./assets/svg/burger-arrow.svg);
+            }
+            .c-hamburger {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                margin: 0 20px 0 0;
+                padding: 0;
+                width: 32px;
+                height: 24px;
+                font-size: 0;
+                text-indent: -9999px;
+                appearance: none;
+                box-shadow: none;
+                border-radius: none;
+                border: none;
+                cursor: pointer;
+              }       
+            .c-hamburger span::before,
+            .c-hamburger span::after {
+                position: absolute;
+                display: block;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                content: "";
+                }
 
+            .c-hamburger span::before {
+                top: -6px;
+                }
+
+            .c-hamburger span::after {
+                bottom: -6px;
+                }       
+            .c-hamburger:focus {
+                outline: none;
+              }
+            .c-hamburger--htx {
+                background-color: black;
+              }
+            .c-hamburger span {
+                display: block;
+                position: absolute;
+                top: 9;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: white;
+              }
+            .c-hamburger--htx span::before,
+            .c-hamburger--htx span::after {
+                content: "";
+                transition-duration: 0.3s, 0.3s;
+                transition-delay: 0.3s, 0s;
+              }
+            .c-hamburger--htx span::before {
+                transition-property: top, transform;
+              }
+            .c-hamburger--htx span::after {
+                transition-property: bottom, transform;
+              }
+            .c-hamburger--htx.is-active span {
+                background: none;
+              }
+            .c-hamburger--htx.is-active span::before {
+                top: 0;
+                transform: rotate(45deg);
+              }
+            .c-hamburger--htx.is-active span::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+              }
+            .c-hamburger--htx.is-active span::before,
+            .c-hamburger--htx.is-active span::after {
+                transition-delay: 0s, 0.3s;
+              }
+        }
+    }
+    
+    @media(max-width: 768px) {
+        .header-container {
+            max-width: 728px;
+            height: 110px;
+        }
+    }
+    
+    @media(max-width: 420px) {
+        .header-container {
+            max-width: 380px;
+            height: 90px;
+        }
+    }
 }
-
 .logo-wrapper {
     display: flex;
     .logo {
@@ -87,6 +221,8 @@ h5 {
     display: flex;
     flex-direction: column;
 }
+
+
 .page-main {
     flex: 1 0 auto;
     .section {
