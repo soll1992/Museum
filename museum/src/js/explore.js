@@ -1,32 +1,51 @@
 function initComparisons() {
-    let x, i;
 
-    x = document.getElementsByClassName("img-explore-overlay");
-    for (i = 0; i < x.length; i++) {
+    let overlay = document.querySelector(".img-explore-overlay")
 
-      compareImages(x[i]);
-    }
+    let tester = document.querySelector(".tester")
+    let main = document.querySelector(".content-conteiner")
+
+
+      compareImages(overlay);
+
     function compareImages(img) {
       var slider, img, clicked = 0, w, h;
 
-      /* Ширина и высота картинки */
+      w = main.offsetWidth     
 
-      w = 720;  
-      h = 700;
 
-      console.log(w)
-      console.log(h)
 
-      img.style.width = (w / 2 + 80) + "px";
+      if (w <= 420) {
+        w = 380
+        h = 368
+      } else if (w > 420 && w <= 768) {
+        w = 728
+        h = 705
+      } else {
+        w = 720
+        h = 700
+      }
+
+
+
+      if (w == 380) {
+        img.style.width = (w / 2 + 40) + "px";
+      } else {
+        img.style.width = (w / 2 + 80) + "px";
+      }
 
       slider = document.createElement("DIV");
       slider.setAttribute("class", "img-explore-slider");
 
       img.parentElement.insertBefore(slider, img);
 
+      if (w == 380) {
+        slider.style.top = (h / 2) - (20 / 2) + "px";
+        slider.style.left = (w / 2 + 40) - (20 / 2) + "px";
+      } else {
       slider.style.top = (h / 2) - (40 / 2) + "px";       /* (+80) стартовое положение слайдера в макете */
       slider.style.left = (w / 2 + 80) - (40 / 2) + "px"; /* (40/2) радиус слайдера */
-                                                          /* Пришлось отказаться от offsetWidth и offsetHeight */
+      }                                                    /* Пришлось отказаться от offsetWidth и offsetHeight */
       slider.addEventListener("mousedown", slideReady);   /* Они постоянно выдавали разные знеачения при обновлении страницы */
                                                           /* Возможно нужно было попробовать как-то кешировать изначальные значения. Попробовать, если останется время */
       window.addEventListener("mouseup", slideFinish);

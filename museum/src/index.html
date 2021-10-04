@@ -33,7 +33,7 @@
                     <li class="navigation-item"><a class="navigation-link" href="#video">Video</a></li>
                     <li class="navigation-item"><a class="navigation-link" href="#gallery">Gallery</a></li>
                     <li class="navigation-item tickets-item-fix"><a class="navigation-link" href="#tickets">Tickets</a></li>
-                    <li class="navigation-item contacts-item-fix"><a class="navigation-link" href="#contacts">Contacts</a></li>
+                    <li class="navigation-item"><a class="navigation-link contacts-item-fix" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +41,7 @@
     <div class="main-footer-wrapper">
         <main class="page-main">
             <section class="section section-black section-welcome">
-                <div class="section-container">
+                <div class="section-container welcome-section-container">
                     <div class="text-content-wrapper">
                         <h1 class="section-title white-text section-welcome-width ">Welcome <br> to the Louvre</h1>
                         <h2 class="subtitle white-text">From the castle to the museum</h2>
@@ -165,25 +165,28 @@
                 </div>
             </section>
             <section id="explore" class="section section-black">
-                <div class="section-container">
+                <div class="section-container explore-section-container">
                     <h2 class="hidden">1</h2>
                     <article class="explore-text-content white-text">
                         <h2 class="section-title explore-title underline-title">Picture explore</h2>
-                        <p class="explore-text-info">Las Meninas is a 1656 painting by Diego Velázquez, the leading <br> artist of the Spanish Golden Age.</p>
+                        <p class="explore-text-info">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
                         <p class="explore-text-info">It was cleaned in 1984 to remove a <span class="gold-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
-                        <p class="explore-text-info">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+                        <p class="explore-text-info text-info-hidden">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
                     </article>
                     <div class="img-explore-container">
-                        <div class="img-explore-img">
-                          <img src="./assets/img/explore-slider/after.jpg" alt="painting">
+                        <div class="img-explore-img explore-middle">
+                          <img class="tester" src="./assets/img/explore-slider/after.jpg" alt="painting">
                         </div>
-                        <div class="img-explore-img img-explore-overlay">
-                          <img src="./assets/img/explore-slider/before.jpg" alt="painting">
+                        <div class="img-explore-img img-explore-overlay explore-middle">
+                          <img class="tester" src="./assets/img/explore-slider/before.jpg" alt="painting">
+                        </div>
+                        <div class="explore-small">
+                            <img class="tester" src="./assets/img/explore-slider/backside.jpg" alt="painting">
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="video" class="section">    
+            <section id="video" class="section video-section-small">    
                 <div class="section-container video-section">
                     <div class="video-text-content">
                         <h2 class="section-title video-section-title gold-text">Video journey</h2>
@@ -191,25 +194,29 @@
                     </div>  
                     <div class="container video-container">
                         <div class="video-frame">
-                          <img src="assets/video/main-video.jpg" width="1440" height="650" alt="video">
+                          <img class="player-img video-full" src="assets/video/main-video.jpg" alt="video">
+                          <img class="player-img video-mid" src="assets/video/main-video-mid.jpg" alt="video">
                           <button class="play-button button"></button>
                         </div>
+                        <input type="range" value="31" min="0" max="100" step="1" class="progress progress-time small">
                         <div class="video-bar">
                           <div class="video-buttons">
                             <button class="play-video button"></button>
                           </div>
-                          <input type="range" value="54" min="0" max="100" step="1" class="progress">
+                          <input type="range" value="54" min="0" max="100" step="1" class="progress progress-time full">
+                          <input type="range" value="40" min="0" max="100" step="1" class="progress progress-time progress-time-mid mid">
                           <div class="value-buttons">
                             <button class="mute-video button"></button>
-                            <input type="range" value="46" min="0" max="100" step="1" class="progress progress-value">
+                            <input type="range" value="46" min="0" max="100" step="1" class="progress progress-value full">
+                            <input type="range" value="40" min="0" max="100" step="1" class="progress progress-value mid">
                             <button class="frame-video button"></button>
                           </div>
                         </div>  
                     </div>
                     <div class="fake-slider">
                         <div class="fake-slider-iframe-wrapper">
-                            <iframe 
-                                width="452" height="254" 
+                            <iframe
+                                class="carousel-item"                                  
                                 src="https://www.youtube.com/embed/aWmJ5DgyWPI"
                                 loading="lazy" 
                                 title="YouTube video player"  
@@ -217,9 +224,9 @@
                                 allowfullscreen>
                             </iframe>
                         </div>
-                        <div class="fake-slider-iframe-wrapper">
-                            <iframe 
-                                width="452" height="254" 
+                        <div class="fake-slider-iframe-wrapper no-margin">
+                            <iframe
+                                class="carousel-item"                          
                                 src="https://www.youtube.com/embed/Vi5D6FKhRmo"
                                 loading="lazy" 
                                 title="YouTube video player" 
@@ -228,8 +235,8 @@
                             </iframe>
                         </div>
                         <div class="fake-slider-iframe-wrapper">
-                            <iframe 
-                                width="452" height="254" 
+                            <iframe
+                                class="carousel-item carousel-item-hidden"                                 
                                 src="https://www.youtube.com/embed/NOhDysLnTvY"
                                 loading="lazy" 
                                 title="YouTube video player"  
@@ -267,7 +274,9 @@
                 <div class="section-container tickets-section">
                     <h2 class="section-title gold-text underline-title">Buy Tickets</h2>
                     <div class="tickets-wrapper">
-                        <img src="./assets/img/tickets.jpg" alt="painting">
+                        <img src="./assets/img/tickets-small.jpg" class="ticket-small" alt="painting">
+                        <img src="./assets/img/tickets-mid.jpg" class="ticket-mid" alt="painting">
+                        <img src="./assets/img/tickets.jpg" class="ticket-full" alt="painting">
                         <div class="ticket-type-wrapper">
                             <h3 class="tickets-bold ticket-type-title">Ticket Type</h3>
                             <div class="ticket-radio-button">
@@ -301,7 +310,7 @@
                                 <button class="button plus"
                                 onclick="this.previousElementSibling.stepUp()">+</button>
                             </div>
-                            <div class="tickets-bold total-title">Total €220</div>
+                            <div class="tickets-bold total-title">Total €<span class="space">220</span></div>
                             <a class="anchor" href="#openModal"><div class="button-buy">Buy Now</div></a>
                         </div>
                     </div>
@@ -469,11 +478,14 @@
                         Musee du Louvre
                       </p>  <a href=""></a>
                       <p class="typography">address&#58; 75001 Paris, France</p>
-                      <p class="typography"><a href="tel:+33(0)140205050">phone&#58; +33(0) 1 40 20 50 50</a></p>
+                      <p class="typography"><a class="phone" href="tel:+33(0)140205050">phone&#58; +33(0) 1 40 20 50 50</a></p>
                       <p class="typography"><a href="mailto:info@louvre.fr">mail&#58; info&#64;louvre.fr</a></p>
                     </div>
                     <div class="map">
-                      <img src="assets/img/map.jpg" alt="map" />
+                      <img class="map-1920" src="assets/img/map.jpg" alt="map" />
+                      <img class="map-1024" src="assets/img/map-1024.jpg" alt="map" />
+                      <img class="map-768" src="assets/img/map-768.jpg" alt="map" />
+                      <img class="map-420" src="assets/img/map-420.jpg" alt="map" />
                     </div>
                   </div>
                 </div>
@@ -489,27 +501,51 @@
                             Louvre
                         </div>
                     </div>
-                    <nav>
-                        <ul>
-                            <li class="navigation-item"><a class="navigation-link" href="#visiting">Visiting</a></li>
-                            <li class="navigation-item"><a class="navigation-link" href="#explore">Explore</a></li>
-                            <li class="navigation-item"><a class="navigation-link" href="#video">Video</a></li>
+                    <div class="nav-socials-wrapper">
+                        <div class="nav-block nav-block-main">
+                            <nav>
+                                <ul>
+                                    <li class="navigation-item"><a class="navigation-link" href="#visiting">Visiting</a></li>
+                                    <li class="navigation-item"><a class="navigation-link" href="#explore">Explore</a></li>
+                                    <li class="navigation-item"><a class="navigation-link" href="#video">Video</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="support-nav">
+                                <ul>
+                                    <li class="navigation-item"><a class="navigation-link" href="#gallery">Gallery</a></li>
+                                    <li class="navigation-item"><a class="navigation-link" href="#tickets">Tickets</a></li>
+                                    <li class="navigation-item"><a class="navigation-link" href="#contacts">Contacts</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="nav-block nav-block-420">
+                            <nav>
+                                <ul>
+                                    <li class="navigation-item"><a class="navigation-link" href="#visiting">Visiting</a></li>
+                                    <li class="navigation-item margin-fix"><a class="navigation-link" href="#explore">Explore</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="middle-column-margin">
+                                <ul>
+                                    <li class="navigation-item"><a class="navigation-link" href="#video">Video</a></li>
+                                    <li class="navigation-item margin-fix"><a class="navigation-link" href="#gallery">Gallery</a></li>
+                                </ul>
+                            </nav>
+                            <nav class="support-nav">
+                                <ul>
+                                    <li class="navigation-item"><a class="navigation-link" href="#tickets">Tickets</a></li>
+                                    <li class="navigation-item margin-fix"><a class="navigation-link" href="#contacts">Contacts</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <ul class="socials">
+                            <li class="social-item"><a class="social-link" href="https://www.youtube.com/user/louvre" target="_blank"><img src="./assets/svg/youtube.svg" alt="youtube"></a></li>
+                            <li class="social-item"><a class="social-link" href="https://www.instagram.com/museelouvre/" target="_blank"><img src="./assets/svg/inst.svg" alt="instagram"></a></li>
+                            <li class="social-item"><a class="social-link" href="https://www.facebook.com/museedulouvre" target="_blank"><img src="./assets/svg/facebook.svg" alt="facebook"></a></li>
+                            <li class="social-item"><a class="social-link" href="http://twitter.com/museelouvre" target="_blank"><img src="./assets/svg/twitter.svg" alt="twitter"></a></li>
+                            <li class="social-item"><a class="social-link" href="https://www.pinterest.fr/museedulouvre/" target="_blank"><img src="./assets/svg/pinteres.svg" alt="pinteres"></a></li>
                         </ul>
-                    </nav>
-                    <nav class="support-nav">
-                        <ul>
-                            <li class="navigation-item"><a class="navigation-link" href="#gallery">Gallery</a></li>
-                            <li class="navigation-item"><a class="navigation-link" href="#tickets">Tickets</a></li>
-                            <li class="navigation-item"><a class="navigation-link" href="#contacts">Contacts</a></li>
-                        </ul>
-                    </nav>
-                    <ul class="socials">
-                        <li class="social-item"><a class="social-link" href="https://www.youtube.com/user/louvre" target="_blank"><img src="./assets/svg/youtube.svg" alt="youtube"></a></li>
-                        <li class="social-item"><a class="social-link" href="https://www.instagram.com/museelouvre/" target="_blank"><img src="./assets/svg/inst.svg" alt="instagram"></a></li>
-                        <li class="social-item"><a class="social-link" href="https://www.facebook.com/museedulouvre" target="_blank"><img src="./assets/svg/facebook.svg" alt="facebook"></a></li>
-                        <li class="social-item"><a class="social-link" href="http://twitter.com/museelouvre" target="_blank"><img src="./assets/svg/twitter.svg" alt="twitter"></a></li>
-                        <li class="social-item"><a class="social-link" href="https://www.pinterest.fr/museedulouvre/" target="_blank"><img src="./assets/svg/pinteres.svg" alt="pinteres"></a></li>
-                    </ul>
+                    </div> 
                 </div>
             </div>
             <div class="bottom-footer">
