@@ -18,8 +18,22 @@ html {
     .header-navigation {
         margin-left: auto;
         .navigation-menu {
-            display: flex;
-            padding-left: 0;
+            ul {
+                display: flex;
+                padding-left: 0;
+            }
+        }
+        .long-img {
+            display: none;
+        }
+        .img-wrapper {
+            display: none;
+            .hidden-420 {
+                display: none;
+            }
+        }
+        .socials {
+            display: none;
         }
         .navigation-item {
             margin-left: 35px;
@@ -66,11 +80,13 @@ html {
                 width: 122px;
                 position: absolute;
                 padding: 44px 20px 20px 35px;
-                border-radius: 0 0 10% 0;
                 left: -1000px;
                 transition: 1s;
                 background-color: black;
                 z-index: 10;
+                ul {
+                    display: block;
+                }
             }
             .navigation-menu-active {
                 left: 0;
@@ -90,11 +106,11 @@ html {
                 margin-top: 23px;
                 position: relative;
             }
-            .navigation-item::after {
+            .navigation-item::before {
                 content: "";
                 position: absolute;
                 top: 8px;
-                right: 0;
+                left: 121px;
                 width: 7px;
                 height: 12px;
                 background: url(./assets/svg/burger-arrow.svg);
@@ -183,12 +199,175 @@ html {
             max-width: 728px;
             height: 110px;
         }
+        .header-navigation {
+            .navigation-menu {
+                display: block;
+                width: 93.8%;
+                height: 840px;
+                position: absolute;
+                padding: 45px 20px 0 26px;
+                left: -1000px;
+                transition: 1s;
+                background-color: black;
+                z-index: 10;
+                ul {
+                    padding: 0;
+                }
+            }
+            .navigation-menu-active {
+                left: 0;
+                transition: 0.5s;
+            }
+            .long-img {
+                display: block;
+                margin-top: 33px;
+                margin-left: 9px;
+            }
+            .img-wrapper {
+                display: flex;
+                width: 658px;
+                margin-top: 16px;
+                margin-left: 9px;
+                margin-bottom: 35px;
+            }
+            .short2 {
+                margin-left: auto;
+                margin-right: 0;
+            }
+            .socials {
+                display: block;
+                width: 98%;
+                padding-top: 35px;
+                border-top: 1px solid #FFFFFF80;
+                ul {
+                    display: flex;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-left: 166px;
+                    list-style-type: none;
+                    .social-item {
+                        margin-right: 25px;
+                    }
+                    .social-item:last-child {
+                        margin-right: 0;
+                    }
+                    .social-link {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        border: 1px solid #666666;
+                        filter: drop-shadow(0px 0px 0px #666666);
+                    }
+                    .social-link:hover {
+                        border-color: #9D8665;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    @media(max-width: 735px) {
+        .header-navigation {
+            .long-img {
+                .long {
+                    width: 100%;
+                }
+            }
+            .img-wrapper {
+                width: 98%;
+            }
+            .short {
+                width: 48.5%;
+            }
+        }
+    }
+    @media(max-width: 560px) {
+        .header-navigation {
+            .navigation-menu {
+                width: 100%;
+                padding-left: 0;
+            }
+            .socials {
+                ul {
+                    margin-left: 10%;
+                }
+            }
+        }
     }
     
     @media(max-width: 420px) {
         .header-container {
             max-width: 380px;
             height: 90px;
+        }
+        .header-navigation {
+            .navigation-menu {
+                display: block;
+                width: 93.8%;
+                height: auto;
+                position: absolute;
+                padding: 42px 20px 0 46px;
+                padding-right: 0;
+                left: -1000px;
+                transition: 1s;
+                background-color: black;
+                z-index: 10;
+                ul {
+                    padding: 0;
+                    margin-bottom: 30px;
+                }
+            }
+            .navigation-menu-active {
+                left: -20px;
+                transition: 0.5s;
+            }
+            .long-img {
+                display: none;
+            }
+            .img-wrapper {
+                display: flex;
+                width: 87%;
+                margin-left: 9px;
+                margin-bottom: 20px;
+                justify-content: space-between;
+                .hidden-420 {
+                    display: block;
+                }
+                .show-420 {
+                    display: none;
+                }
+                .short {
+                    width: 95px;
+                    height: 95px;
+                }
+                .short2 {
+                    margin: 0;
+                }
+            }
+            .socials {
+                display: block;
+                width: 90%;
+                padding-top: 20px;
+                border-top: 1px solid #FFFFFF80;
+                ul {
+                    display: flex;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-left: 33px;
+                    list-style-type: none;
+                    .social-item {
+                        margin-right: 3px;
+                    }
+                    .social-item:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+            
         }
     }
 }
