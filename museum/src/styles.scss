@@ -1036,6 +1036,7 @@ h5 {
             padding-bottom: 91px;
             margin-left: 235px;
             display: flex;
+            position: relative;
             .book-logo {
                 width: 82px;
                 height: 41px;
@@ -1195,7 +1196,7 @@ h5 {
                 width: 17px;
                 height: 17px;
                 background: url(./assets/svg/drop.svg) no-repeat center;
-                z-index: -1;
+                z-index: 0;
             }
             .wrapper-margin {
                 margin-top: 20px;
@@ -1226,7 +1227,7 @@ h5 {
                     width: 33px;
                     height: 23px;
                     border: 1px solid black;
-                    text-align: right;
+                    text-align: center;
                     margin-left: -4px;
                     font-family: "Roboto";
                     font-style: normal;
@@ -1528,6 +1529,232 @@ h5 {
                 cursor: pointer;
             }
         }
+        @media(max-width: 1250px) {
+            .tickets-form {
+                padding-top: 75px;
+                margin-left: 27px;
+            }
+        }
+        @media(max-width: 1000px) {
+            .tickets-form {
+                display: block;
+                .other-form-wrapper {
+                    margin-left: 0;
+                }
+                .book-title {
+                    width: 100%;
+                }
+                .date-time-wrapper {
+                    margin-top: 52px;
+                }
+                .textbox {
+                    width: 200px;
+                }
+                .custom-input {
+                    width: 482px;
+                }
+                .ticket-type-body {
+                    width: 498px;
+                }
+                .other-form-wrapper {
+                    width: 498px;
+                    margin-top: 51px;
+                    padding-left: 16px;
+                    padding-right: 15px;
+                }
+                .backside-card {
+                    left: 140px;
+                }
+                .book {
+                    left: 280px;
+                }
+            }
+        }
+        @media(max-width: 570px) {
+            .tickets-form {
+                padding-top: 80px;
+                display: block;
+                .other-form-wrapper {
+                    margin-left: 0;
+                }
+                .book-title {
+                    font-size: 32px;
+                    line-height: 35px;
+                    width: 100%;
+                }
+                .underline-title::before {
+                    max-width: 360px;
+                    bottom: -47px;
+                }
+                .date-time-wrapper {
+                    display: block;
+                    margin-top: 52px;
+                }
+                .date-conteiner {
+                    width: 360px;
+                }
+                .ticket-type-wrapper {
+                    width: 360px;
+                }
+                .time-conteiner {
+                    width: 360px;
+                    margin-top: 20px;
+                }
+                .textbox {
+                    width: 312px;
+                }
+                .custom-input {
+                    width: 312px;
+                }
+                .ticket-type-body {
+                    width: 330px;
+                }
+                .other-form-wrapper {
+                    width: 328px;
+                    height: auto;
+                    margin-top: 51px;
+                    padding-left: 16px;
+                    padding-right: 15px;
+                }
+                .form-img {
+                    width: 120px;
+                    height: 96px;
+                }
+                .tickets-info-subtitle {
+                    margin-bottom: 10px;
+                }
+                .card-frontside {
+                    width: 290px;
+                    margin-top: 24px;
+                }
+                .card-right-part {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                .cardholder {
+                    width: 98%;
+                }
+                .text {
+                    font-size: 11px;
+                }
+                .backside-card {
+                    position: static;
+                    margin-top: 25px;
+                    width: 330px;
+                }
+                .backside-main {
+                    margin-left: 235px;
+                    padding-right: 30px;
+                }
+                .cvc {
+                    font-size: 13px;
+                }
+                .cvc-info {
+                    font-size: 9px;
+                    line-height: 11px;
+                }
+                .book {
+                    position: static;
+                    margin-top: 40px;
+                    margin-left: 110px;
+                }
+            }
+        }
+        @media(max-width: 390px) {
+            .tickets-form {
+                padding-top: 80px;
+                display: block;
+                .other-form-wrapper {
+                    margin-left: 0;
+                }
+                .book-title {
+                    font-size: 32px;
+                    line-height: 35px;
+                    width: 100%;
+                }
+                .underline-title::before {
+                    max-width: 80%;
+                    bottom: -47px;
+                }
+                .date-time-wrapper {
+                    display: block;
+                    margin-top: 52px;
+                }
+                .date-conteiner {
+                    width: 75%;
+                }
+                .ticket-type-wrapper {
+                    width: 75%;
+                }
+                .time-conteiner {
+                    width: 75%;
+                    margin-top: 20px;
+                }
+                .textbox {
+                    width: 80%;
+                }
+                .custom-input {
+                    width: 60%;
+                }
+                .select {
+                    min-width: 220px;
+                }
+                .ticket-type-body {
+                    width: 70%;
+                }
+                .other-form-wrapper {
+                    width: 70%;
+                    height: auto;
+                    margin-top: 51px;
+                    padding-left: 16px;
+                    padding-right: 15px;
+                }
+                .form-img {
+                    width: 120px;
+                    height: 96px;
+                }
+                .tickets-info-subtitle {
+                    margin-bottom: 10px;
+                }
+                .card-frontside {
+                    width: 85%;
+                    margin-top: 24px;
+                    padding-left: 5px;
+                }
+                .card-right-part {
+                    display: none;
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                .cardholder {
+                    width: 98%;
+                }
+                .text {
+                    font-size: 11px;
+                }
+                .backside-card {
+                    position: static;
+                    margin-top: 25px;
+                    width: 96%;
+                }
+                .backside-main {
+                    margin-left: 135px;
+                    padding-right: 30px;
+                }
+                .cvc {
+                    font-size: 13px;
+                }
+                .cvc-info {
+                    font-size: 9px;
+                    line-height: 11px;
+                }
+                .book {
+                    position: static;
+                    margin-top: 40px;
+                    margin-left: 30px;
+                }
+            }
+        }
         .contacts-section {
             display: block;
         }
@@ -1570,6 +1797,7 @@ h5 {
             display: none;
         }
     }
+
 
     .section-welcome {
         height: 810px;
@@ -1893,6 +2121,12 @@ h5 {
                 display: block;
             }
         }
+        .modal-1024 {
+            width: 100%;
+            .modal-section {
+                max-width: 1024px;
+            }
+        }
         .section-welcome {
             height: 585px;
             padding: 0;
@@ -1905,6 +2139,11 @@ h5 {
                     margin-left: 1%;
                 }
             }
+        }
+        .modal-1024 {
+            width: 100%;
+            max-width: 590px;
+            margin: 0 auto;
         }
     }
     @media(max-width: 768px) {
@@ -2197,6 +2436,11 @@ h5 {
                 display: block;
             }
         }
+        .modal-1024 {
+            width: 100%;
+            max-width: 590px;
+            margin: 0 auto;
+        }
         .section-welcome {
             height: 861px;
             padding: 0;
@@ -2258,6 +2502,13 @@ h5 {
                     }
                 }
             }
+        }
+    }
+    @media(max-width: 570px) {
+        .modal-1024 {
+            width: 100%;
+            max-width: 570px;
+            margin: 0 auto;
         }
     }
     @media(max-width: 420px) {
@@ -2581,6 +2832,15 @@ h5 {
             padding-top: 37px;
             padding-bottom: 37px;
         }
+        .modal-1024 {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            .modal-section {
+                width: 100%;
+                max-width: 420px;
+            }
+        }
         .section-welcome {
             height: 550px;
             padding: 0;
@@ -2629,13 +2889,18 @@ h5 {
         width: auto;
         margin: 10px;
     }
+    @media(max-width:1024px) {
+        .modal-dialog {
+            margin: 0;
+        }
+    }
     .modal-section {
         background-color: white;
     }
     .close {
         position: absolute;
-        top: 100px;
-        right: 210px;
+        top: 30px;
+        right: 0;
         display: block;
         width: 25px;
         height: 25px;
@@ -2773,6 +3038,9 @@ h5 {
     @media(max-width: 1470px) {
         .top-footer {
             .logo-footer {
+                margin-right: 0;
+            }
+            .nav-block {
                 margin-right: 0;
             }
         }
