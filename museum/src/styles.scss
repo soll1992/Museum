@@ -2,6 +2,11 @@
 html {
     scroll-behavior: smooth;
 }
+
+iframe {
+    border: none;
+}
+
 .content-conteiner {
     width: 100%;
 }
@@ -79,7 +84,7 @@ html {
                 display: block;
                 width: 122px;
                 position: absolute;
-                padding: 44px 20px 20px 35px;
+                padding: 64px 20px 20px 25px;
                 left: -1000px;
                 transition: 1s;
                 background-color: black;
@@ -272,6 +277,11 @@ html {
 
     @media(max-width: 735px) {
         .header-navigation {
+            .navigation-menu {
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
             .long-img {
                 .long {
                     width: 100%;
@@ -290,6 +300,7 @@ html {
             .navigation-menu {
                 width: 100%;
                 padding-left: 0;
+                padding-right: 0;
             }
             .socials {
                 ul {
@@ -368,6 +379,17 @@ html {
                 }
             }
             
+        }
+    }
+    @media(max-width: 400px) {
+        .header-navigation {
+            .navigation-menu {
+                width: 100%;
+                padding-left: 0;
+            }
+            .navigation-menu-active {
+                left: 0px;
+            }
         }
     }
 }
@@ -2311,6 +2333,7 @@ h5 {
             padding: 0;
         }
     }
+    
     @media(max-width: 900px) {
         .section {
             .explore-section-container {
@@ -2503,7 +2526,7 @@ h5 {
                 margin-top: 17px;
             }
             .fake-slider-iframe-wrapper {
-                margin-right: 12px;
+                margin-right: 0;
             }
             .no-margin {
                 margin-left: auto;
@@ -2627,6 +2650,42 @@ h5 {
     }
     @media(max-width: 730px) {
         .section {
+            .carousel{
+                img {
+                    width: 100%;
+                }
+                .pagination {
+                    height: 70px;
+                    width: 350px;
+                    bottom: -70px;
+                    right: 20%;
+                    padding: 0;
+                }
+                .pagination-index {
+                    font-size: 16px;
+                    word-spacing: 2px;
+                }
+                .radio-wrapper {
+                    margin-right: 10px;
+                }
+                .radio-pagination {
+                    margin-left: 25px;
+                }
+                .radio+label::before {
+                    width: 7px;
+                    height: 7px;
+                }
+                .control {
+                    font-size: 20px;
+                }
+                .control.left {
+                    margin-left: 10px;
+                    margin-right: 4px;
+                }
+                .control.right {
+                    margin-top: 5px;
+                }
+            } 
             .explore-section-container {
                 .tester {
                     width: 100%;
@@ -2716,36 +2775,8 @@ h5 {
                     display: none;
                 }
                 .pagination {
-                    height: 70px;
-                    width: 350px;
-                    bottom: -70px;
                     right: 32px;
-                    padding: 0;
-                }
-                .pagination-index {
-                    font-size: 16px;
-                    word-spacing: 2px;
-                }
-                .radio-wrapper {
-                    margin-right: 10px;
-                }
-                .radio-pagination {
-                    margin-left: 25px;
-                }
-                .radio+label::before {
-                    width: 7px;
-                    height: 7px;
-                }
-                .control {
-                    font-size: 20px;
-                }
-                .control.left {
-                    margin-left: 10px;
-                    margin-right: 4px;
-                }
-                .control.right {
-                    margin-top: 5px;
-                }
+                }               
             }
             /* visiting */
             .underline-title::before {
@@ -3027,6 +3058,11 @@ h5 {
     }
     @media(max-width:390px){
         .section {
+            .carousel{
+                img {
+                    width: 100%;
+                }
+            }
             .video-container {
                 .progress-value {
                     width: 90%;
