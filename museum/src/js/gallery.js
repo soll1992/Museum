@@ -25,6 +25,19 @@ imgs.map(item => {
     pictureInnerContainer.append(img);
 })
 
+window.addEventListener('scroll', ()=>{
+  let gallery = document.querySelectorAll('.gallery-img');
+  gallery.forEach(img => {
+      if (document.body.scrollTop > img.getBoundingClientRect().top - 700) {
+          img.style.opacity = 1;
+          img.style.transform = "translate(0, 0)"
+      } else {
+          img.style.opacity = 0;
+          img.style.transform = "translate(0, 100px)"
+      }
+  })
+})
+
 
 
 

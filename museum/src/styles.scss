@@ -3,8 +3,47 @@ html {
     scroll-behavior: smooth;
 }
 
-iframe {
-    border: none;
+.tns-controls {
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    button {
+        width: 10px;
+        height: 12px;
+        padding: 0;
+        border: none;
+        background: url(./assets/svg/prev-video.svg)
+    }
+    button:last-child {
+        transform: rotate(-180deg)
+    }
+}
+
+.tns-nav {
+    width: 160px;
+    position: relative;
+    top: 33px;
+    left: 10px;
+    margin: 0 auto;
+
+    button {
+        width: 12px;
+        height: 12px;
+        margin-left: 20px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+        background: #999999;
+    }
+    button:first-child {
+        margin-left: 0;
+    }
+    .tns-nav-active {
+        background: #333333;
+    }
 }
 
 .content-conteiner {
@@ -1065,6 +1104,8 @@ h5 {
                 width: 100%;
                 margin-bottom: 24px;
                 display: block;
+                transition: transform 0.4s, opacity 0.4s;
+                transition-delay: 0.2s;
             }
             
             .gallery-img5,
