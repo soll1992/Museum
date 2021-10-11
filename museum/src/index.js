@@ -8,6 +8,8 @@ import './js/video'
 import './js/gallery'
 import './js/tickets'
 import './js/hamburger'
+import './js/form.js'
+
 
 
 const slider = tns({
