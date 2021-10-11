@@ -909,6 +909,21 @@ h5 {
                     display: none;
                 }
             }
+            .video-player {
+                object-fit: cover;
+            }
+            .fullscreen{
+                width: 100%;
+                height: 100%;
+            }
+            .fullscreen-video {
+                width: 100%;
+                height: 90%;
+            }
+            .fullscreen-video-bar {
+                width: 80%;
+                margin: 0 auto;
+            }
             .play-button {
                 position: absolute;
                 width: 220px;
@@ -926,6 +941,8 @@ h5 {
                 padding-left: 31px;
                 background-color: #000;
                 display: flex;
+                position: relative;
+                top: -4px;
                 align-items: center;
             }
             .video-buttons {
@@ -941,6 +958,9 @@ h5 {
                 background-position: center center;
                 transition: all 0.3s ease;
               }
+            .video-pause {
+                background-image: url(assets/svg/pause.svg);
+            }
             .mid {
                 display: none;
             }  
@@ -982,6 +1002,10 @@ h5 {
                 background-position: center center;
                 transition: all 0.3s ease;
             }
+
+            .video-muted {
+                background-image: url(./assets/svg/volume.svg);
+            }
               
             .progress-value {
                 background: linear-gradient(
@@ -1003,6 +1027,10 @@ h5 {
                 background-repeat: no-repeat;
                 background-position: center center;
                 transition: all 0.3s ease;
+            }
+
+            .fullscreen-exit {
+                background-image: url(./assets/svg/fullscreen_exit.svg);
             }
               
             .value-buttons {
