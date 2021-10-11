@@ -2,12 +2,9 @@ let video = document.querySelector('.video-player');
 let frame = document.querySelector('.video-frame');
 let videoBar = document.querySelector('.video-bar');
 let fullscreenBtn = document.querySelector('.frame-video');
-let currentVideo = 0;
 const barColor = '#710707';
 const bigPlay = document.querySelector('.play-button');
 const barPlay = document.querySelector('.play-video');
-const backBtn = document.querySelector('.video-player-controls-back');
-const forwardBtn = document.querySelector('.video-player-controls-forward');
 const mute = document.querySelector('.mute-video');
 const fullscreen = document.querySelector('.frame-video');
 const progress = document.querySelector('.progress-time-main');
@@ -86,6 +83,9 @@ function togglePlayPause() {
 
 function videoChangeProgressValue() {
     progress.value = Math.floor(100*video.currentTime/video.duration)
+    if(isNaN(video.duration)) {
+        progress.value = 0
+    }
     progress.style.background = `linear-gradient(to right, ${barColor} 0%, ${barColor} ${progress.value}%, #c4c4c4 ${progress.value}%, #c4c4c4 100%)`
 }
 
@@ -100,18 +100,6 @@ fullscreen.addEventListener('click', videoFullscreen);
 volume.addEventListener('input', videoChangeVolume);
 progress.addEventListener('input', videoChangeProgress);
 document.addEventListener('keydown', toggleKeys)
-
-let visible = false
-var observer = new IntersectionObserver(function(entries) { console.log(entries);
-	if(entries[0]['isIntersecting'] === true) {
-		visible = true;
-	}
-	else {
-		visible = false;
-	}
-}, { threshold: [0, 0.5, 1] });
-
-observer.observe(video);
 
 function toggleKeys(e) {
 
