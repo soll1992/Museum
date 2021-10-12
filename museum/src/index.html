@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
@@ -473,11 +474,11 @@
                       <p class="typography"><a class="phone" href="tel:+33(0)140205050">phone&#58; +33(0) 1 40 20 50 50</a></p>
                       <p class="typography"><a href="mailto:info@louvre.fr">mail&#58; info&#64;louvre.fr</a></p>
                     </div>
-                    <div class="map">
-                      <img class="map-1920" src="assets/img/map.jpg" alt="map" />
+                    <div id="map" class="map">
+<!--                       <img class="map-1920" src="assets/img/map.jpg" alt="map" />
                       <img class="map-1024" src="assets/img/map-1024.jpg" alt="map" />
                       <img class="map-768" src="assets/img/map-768.jpg" alt="map" />
-                      <img class="map-420" src="assets/img/map-420.jpg" alt="map" />
+                      <img class="map-420" src="assets/img/map-420.jpg" alt="map" /> -->
                     </div>
                   </div>
                 </div>
@@ -550,7 +551,7 @@
         </footer>
     </div>
     </div>
-<!--     <script src="./js/test2.js"></script> -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 </body>
 </html>
 

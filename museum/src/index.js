@@ -9,6 +9,7 @@ import './js/gallery'
 import './js/tickets'
 import './js/hamburger'
 import './js/form.js'
+import './js/map.js'
 
 
 
