@@ -7,7 +7,6 @@
     <title>museum</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-    <link rel="stylesheet" href="style.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -219,19 +218,18 @@
                     </div>  
                     <div class="container video-container">
                         <div class="video-frame">
-                            <video class="video-player" src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpg" width="1440" height="650"></video>
+                            <video class="video-player" src="./assets/video/video0.mp4" poster="./assets/video/poster0.jpg"></video>
                             <button class="play-button button"></button>
-                            <input type="range" value="0" min="0" max="100" step="1" class="progress progress-time small">
                             <div class="video-bar">
-                              <div class="video-buttons">
-                                <button class="play-video button"></button>
+                              <div class="play-wrap">
+                                <div class="video-buttons">
+                                    <button class="play-video button"></button>
+                                </div>
+                                <input type="range" value="0" min="0" max="100" step="1" class="progress progress-time progress-time-main"> 
                               </div>
-                              <input type="range" value="0" min="0" max="100" step="1" class="progress progress-time progress-time-main full">
-                              <input type="range" value="0" min="0" max="100" step="1" class="progress progress-time progress-time-mid mid">
                               <div class="value-buttons">
                                 <button class="mute-video button"></button>
-                                <input type="range" value="46" min="0" max="100" step="1" class="progress progress-value full">
-                                <input type="range" value="40" min="0" max="100" step="1" class="progress progress-value mid">
+                                <input type="range" value="46" min="0" max="100" step="1" class="progress progress-value">
                                 <button class="frame-video button"></button>
                               </div>
                             </div>  

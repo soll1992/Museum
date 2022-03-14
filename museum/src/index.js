@@ -10,7 +10,6 @@ import './js/tickets'
 import './js/hamburger'
 import './js/form.js'
 import './js/map.js'
-import './js/log.js'
 
 
 
